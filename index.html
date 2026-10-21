@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordly Dictionary – Interactive Word Lookup</title>
+  <meta name="description" content="Search words, view definitions, pronunciation, synonyms, and save favorites. A single-page dictionary for Wordly.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+         
+        <h1>Wordly</h1>
+      </div>
+      <p class="tagline">Discover words. Learn deeper.</p>
+ 
+    </header>
+
+    <main class="main">
+      <section class="search-section" aria-labelledby="search-heading">
+        <h2 id="search-heading" class="sr-only">Search for a word</h2>
+        <form id="search-form" class="search-form" role="search">
+          <div class="input-wrapper">
+            <label for="word-input" class="sr-only">Enter a word</label>
+            <input
+              type="text"
+              id="word-input"
+              name="word"
+              placeholder="Type a word…"
+              autocomplete="off"
+              spellcheck="true"
+              aria-describedby="search-hint"
+              required
+            >
+            <button type="submit" id="search-btn" class="search-btn" aria-label="Search">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <p id="search-hint" class="hint">Press Enter or click the search icon</p>
+        </form>
+      </section>
+
+      <section id="status" class="status" aria-live="polite" aria-atomic="true"></section>
+
+      <section id="results" class="results" hidden>
+        <!-- Dynamically populated -->
+      </section>
+
+      <section class="favorites-section" aria-labelledby="favorites-heading">
+        <div class="favorites-header">
+          <h2 id="favorites-heading">Saved Words</h2>
+          <button id="clear-favorites" class="text-btn" hidden>Clear all</button>
+        </div>
+        <ul id="favorites-list" class="favorites-list"></ul>
+        <p id="favorites-empty" class="empty-state">No saved words yet. Search and click the heart to save favorites.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Powered by the <a href="https://dictionaryapi.dev/" target="_blank" rel="noopener noreferrer">Free Dictionary API</a></p>
+      <p class="credit">Built for Wordly · Single Page Application</p>
+    </footer>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+</html>
